@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CircustreinCode\Circustrein.csproj" />
+    <ProjectReference Include="..\Circustrein\Circustrein.csproj" />
   </ItemGroup>
 
 </Project>

@@ -51,18 +51,6 @@ namespace Circustrein
             return a;
         }
 
-        //public Type CheckDierType(Dier dier)
-        //{
-        //    Type type = dier.type;
-        //    return type;
-        //}
-
-        //public Grootte CheckDierGrootte(Dier dier)
-        //{
-        //    Grootte grootte = dier.grootte;
-        //    return grootte;
-        //}
-
         public List<Dier> OrderList(List<Dier> Dieren)
         {
             List<Dier> KleineDieren = new List<Dier>();
