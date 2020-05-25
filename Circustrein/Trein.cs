@@ -8,7 +8,6 @@ namespace Circustrein
 {
     public class Trein
     {
-        List<Dier> Dieren;
         public readonly List<Wagon> Wagons;
         Wagon Wagon;
         public Trein()
