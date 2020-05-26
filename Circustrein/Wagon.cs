@@ -26,26 +26,26 @@ namespace Circustrein
         {
             if (DierenInWagon.Count != 0)
             {
-                foreach (Dier toegevoegddier in DierenInWagon)
+                foreach (Dier dierInWagon in DierenInWagon)
                 {
                     switch (dier.grootte)
                     {
                         default:
                             break;
                         case Grootte.Groot:
-                            if (toegevoegddier.type == Type.Carnivoor && toegevoegddier.grootte == Grootte.Groot)
+                            if (dierInWagon.type == Type.Carnivoor && dierInWagon.grootte == Grootte.Groot)
                             {
                                 return true;
                             }
                             break;
                         case Grootte.Middel:
-                            if (toegevoegddier.type == Type.Carnivoor && (toegevoegddier.grootte == Grootte.Groot || toegevoegddier.grootte == Grootte.Middel))
+                            if (dierInWagon.type == Type.Carnivoor && (dierInWagon.grootte == Grootte.Groot || dierInWagon.grootte == Grootte.Middel))
                             {
                                 return true;
                             }
                             break;
                         case Grootte.Klein:
-                            if (toegevoegddier.type == Type.Carnivoor)
+                            if (dierInWagon.type == Type.Carnivoor)
                             {
                                 return true;
                             }

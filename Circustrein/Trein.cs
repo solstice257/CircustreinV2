@@ -13,7 +13,6 @@ namespace Circustrein
         public Trein()
         {
             Wagons = new List<Wagon>();
-            //Wagons.Add(new Wagon());
         }
 
         private Wagon MaakWagon()
@@ -23,7 +22,7 @@ namespace Circustrein
         }
         public void DierToevoegenWagon(List<Dier> Dieren)
         {
-            foreach (Dier dier in OrderList(Dieren))
+            foreach (Dier dier in SorteerLijst(Dieren))
             {
                 WagonMetPlek(dier);
             }
@@ -32,6 +31,7 @@ namespace Circustrein
         public Wagon WagonMetPlek(Dier dier)
         {
             {
+                // Er wordt niets gedaan met de return van de wagon maar deze dient eigenlijk als een break.
                 foreach (Wagon wagon in Wagons)
                 { 
                     if (!wagon.GeenPlek(dier))
@@ -50,11 +50,12 @@ namespace Circustrein
             return a;
         }
 
-        public List<Dier> OrderList(List<Dier> Dieren)
+        public List<Dier> SorteerLijst(List<Dier> Dieren)
         {
+            // De list met dieren moet eerst gesorteerd worden. 
+            // Dieren moeten in een bepaalde volgorde in de wagons geplaatst worden.
             List<Dier> KleineDieren = new List<Dier>();
 
-            
             Dieren = Dieren.OrderBy(c => c.grootte).ToList();
             Dieren = Dieren.OrderBy(c => c.type).ToList();
             for (int i = 0; i < Dieren.Count; i++)
