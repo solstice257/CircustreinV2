@@ -26,7 +26,7 @@ namespace Circustrein.Tests
 
             trein.DierToevoegenWagon(dieren);
 
-            int aantalWagons = trein.Wagons.Count;
+            int aantalWagons = trein.allWagons.Count;
 
             Assert.AreEqual(2, aantalWagons);
         }
@@ -46,7 +46,7 @@ namespace Circustrein.Tests
             dieren.Add(new Dier(Type.Carnivoor, Grootte.Groot, 5));
             trein.DierToevoegenWagon(dieren);
 
-            int aantalWagons = trein.Wagons.Count;
+            int aantalWagons = trein.allWagons.Count;
 
             Assert.AreEqual(6, aantalWagons);
         }
@@ -79,7 +79,7 @@ namespace Circustrein.Tests
             dieren.Add(new Dier(Type.Carnivoor, Grootte.Klein, 1));
             trein.DierToevoegenWagon(dieren);
 
-            int aantalWagons = trein.Wagons.Count;
+            int aantalWagons = trein.allWagons.Count;
 
             Assert.AreEqual(8, aantalWagons);
         }
@@ -97,7 +97,7 @@ namespace Circustrein.Tests
 
             trein.DierToevoegenWagon(dieren);
 
-            int aantalWagons = trein.Wagons.Count;
+            int aantalWagons = trein.allWagons.Count;
 
             Assert.AreEqual(2, aantalWagons);
         }
@@ -115,7 +115,7 @@ namespace Circustrein.Tests
 
             trein.DierToevoegenWagon(dieren);
 
-            int aantalWagons = trein.Wagons.Count;
+            int aantalWagons = trein.allWagons.Count;
 
             Assert.AreEqual(2, aantalWagons);
         }

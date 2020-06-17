@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Circustrein
 {
     public class Wagon
     {
-        int totaalPunten;
+        int TotaalPuntenWagon;
+        public ReadOnlyCollection<Dier> alleDierenInWagon;
         List<Dier> DierenInWagon;
         public Wagon()
         {
@@ -15,14 +17,14 @@ namespace Circustrein
 
         public bool GeenPlek(Dier dier)
         {
-            if (dier.punten + totaalPunten < 11)
+            if (dier.punten + TotaalPuntenWagon < 11)
             {
                 return false;
             }
             return true;
         }
 
-        public bool GevaarLijkVoorDier(Dier dier)
+        public bool GevaarlijkVoorDier(Dier dier)
         {
             if (DierenInWagon.Count != 0)
             {
@@ -59,7 +61,8 @@ namespace Circustrein
         public void VoegDierToe(Dier dier)
         {
             DierenInWagon.Add(dier);
-            totaalPunten = totaalPunten + dier.punten;
+            TotaalPuntenWagon = TotaalPuntenWagon + dier.punten;
+            alleDierenInWagon = DierenInWagon.AsReadOnly();
         }
     }
 }

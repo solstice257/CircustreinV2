@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -8,8 +9,10 @@ namespace Circustrein
 {
     public class Trein
     {
-        public readonly List<Wagon> Wagons;
+        public ReadOnlyCollection<Wagon> allWagons;
+        List<Wagon> Wagons;
         Wagon Wagon;
+
         public Trein()
         {
             Wagons = new List<Wagon>();
@@ -26,6 +29,7 @@ namespace Circustrein
             {
                 WagonMetPlek(dier);
             }
+            allWagons = Wagons.AsReadOnly();
         }
 
         public Wagon WagonMetPlek(Dier dier)
@@ -36,7 +40,7 @@ namespace Circustrein
                 { 
                     if (!wagon.GeenPlek(dier))
                     {
-                        if (!wagon.GevaarLijkVoorDier(dier))
+                        if (!wagon.GevaarlijkVoorDier(dier))
                         {
                             wagon.VoegDierToe(dier);
                             return wagon;
